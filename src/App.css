@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #444;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 32px;
+}
+
+h1 {
+  background-color: white;
+  color: #444;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 10px
+}
+
+h2 {
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.levels {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
