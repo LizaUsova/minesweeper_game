@@ -1,31 +1,28 @@
 import React, {useState} from 'react';
 
 function Board({level}) {
-    let config
     const [customConfig, setCustomConfig] = useState({rows: 0, cols: 0, bombs: 0})
+
+    let config
 
     if(level === 'easy') {
         config = {rows: 6, cols: 9, bombs: 2}
     } else if(level === 'medium') {
         config = {rows: 9, cols: 12, bombs: 9}
     } else if(level === 'hard') {
-        config = {rows: 12, cols: 12, bombs: 12}
+        config = {rows: 12, cols: 18, bombs: 15}
     } else if(level === 'custom') {
         config = customConfig
     }
 
-
     const { rows, cols, bombs } = config;
     const totalCells = config.rows * config.cols;
 
-    const handleChangeCustom = (e) => {
-        const {name, value} = e.target
-        setCustomConfig(prev => ({
-            ...prev,
-            [name]: parseInt(value, 10)
-        }))
+    const handleChangeCustom = ({target}) => {
+        const customConfigCopy = {...customConfig}
+        customConfigCopy[target.name] = target.value;
+        setCustomConfig(customConfigCopy)
     }
-
 
     return (
         <>
@@ -44,10 +41,8 @@ function Board({level}) {
                         <span className="custom-values">bombs:</span>
                         <input type="number" name="bombs" value={customConfig.bombs} onChange={handleChangeCustom} min={0} />
                     </label>
-                    {/*<button onClick={handleStartCustomGame}>Start Game</button>*/}
                 </div>
             )}
-
             <div className="board-grid" style={{gridTemplateColumns: `repeat(${cols}, 40px)`}}>
                 {Array.from({length: totalCells}).map((_, index) =>
                     <button key={index} className="cell"></button>
