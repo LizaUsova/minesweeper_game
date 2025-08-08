@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Level from "./components/Level/Level.jsx";
+import Board from "./components/Level/Board.jsx";
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -24,7 +24,7 @@ function App() {
                     <button onClick={() => setLevel('custom')}>Custom</button>
                 </div>
                 ) : (
-                    <Level level={level} />
+                    <Board level={level} />
                 )
             )}
         </div>
