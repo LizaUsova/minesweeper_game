@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="game">
-          <h1>Sapper Game</h1>
+          <h1>Minesweeper</h1>
             {!gameStarted ? (
                 <button
                     onClick={() => setGameStarted(true)}>
