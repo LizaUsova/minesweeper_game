@@ -1,10 +1,21 @@
-import React from 'react';
+function Cell({ onClick, status }) {
 
-function Cell({ onClick }) {
+    let val = ""
+    const classes = ["cell"]
+    if (status === 'O') {
+        classes.push("cell_closed")
+    } else if (status === 'F') {
+        classes.push("cell_flag")
+    } else {
+        classes.push("cell_number")
+        val = status
+    }
+
     return (
         <button
-            className="cell cell_closed"
+            className={classes.join(" ")}
             onClick={onClick}>
+            {val}
         </button>
     );
 }

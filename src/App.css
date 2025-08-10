@@ -98,3 +98,13 @@ input {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.cell_flag {
+  background-image: url("./assets/icons/flag.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cell_number {
+    color: blue;
+}
