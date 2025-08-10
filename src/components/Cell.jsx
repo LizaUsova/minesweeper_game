@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Cell({}) {
+function Cell({ onClick }) {
     return (
         <button
-            className="cell cell_closed">
+            className="cell cell_closed"
+            onClick={onClick}>
         </button>
     );
 }
