@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Cell from "./Cell.jsx";
 
 function Board({level}) {
     const [customConfig, setCustomConfig] = useState({rows: 0, cols: 0, bombs: 0})
@@ -70,7 +71,7 @@ function Board({level}) {
                         </div>
                         <div className="board-grid" style={{gridTemplateColumns: `repeat(${cols}, 40px)`}}>
                             {Array.from({length: totalCells}).map((_, index) =>
-                                <button key={index} className="cell"></button>
+                                <Cell key={index}></Cell>
                                 )}
                         </div>
                     </div>

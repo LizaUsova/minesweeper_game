@@ -20,6 +20,7 @@ h1 {
 
 h2 {
   text-align: center;
+  margin: 10px 0;
 }
 
 .custom-values {
@@ -49,12 +50,6 @@ input {
   flex-direction: column;
   gap: 20px;
 }
-
-/*.top-board_wrapper {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  margin: 0;*/
-/*}*/
 
 .top-board {
   display: flex;
@@ -95,4 +90,11 @@ input {
   border: 0.3px solid #ccc;
   border-radius: 0;
   background-color: #aaa;
+  cursor: default;
+}
+
+.cell_closed {
+  background-image: url("./assets/icons/closed.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
