@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Cell from "./Cell.jsx";
 import TopBord from "./TopBord.jsx";
 
-function Board({level}) {
-    const [customConfig, setCustomConfig] = useState({rows: 0, cols: 0, bombs: 0});
+function Board({ level, customConfig }) {
+
     const [timer, setTimer] = useState(0);
     const [mineCounter, setMineCounter] = useState(0);
     const [isGameStarted, setIsGameStarted] = useState(false);
@@ -58,12 +58,7 @@ function Board({level}) {
         }, 500)
     }, []);
 
-    const handleChangeCustom = ({target}) => {
-        setCustomConfig(prev => ({
-            ...prev,
-            [target.name]: Number(target.value)
-        }));
-    };
+
 
     // useEffect(() => {
     //     let interval;
@@ -106,27 +101,12 @@ function Board({level}) {
 
     return (
         <>
-            <h2>Good luck!</h2>
-
-            {level === 'custom' && (
-                <div className="custom-inputs">
-                    <label>
-                        <span className="custom-values">rows:</span>
-                        <input type="number" name="rows" value={customConfig.rows} onChange={handleChangeCustom} min={8} />
-                    </label>
-                    <label>
-                        <span className="custom-values">cols:</span>
-                        <input type="number" name="cols" value={customConfig.cols} onChange={handleChangeCustom} min={8} />
-                    </label>
-                    <label>
-                        <span className="custom-values">bombs:</span>
-                        <input type="number" name="bombs" value={customConfig.bombs} onChange={handleChangeCustom} min={1} />
-                    </label>
-                </div>
-            )}
+            {level === 'custom'}
 
             {gameData?
            (
+
+
             <div className="board_wrapper">
                 <TopBord bombs={mineCounter} timer={timer} />
                 <div className="board-grid" style={{gridTemplateColumns: `repeat(${width}, 40px)`}}>
@@ -135,6 +115,7 @@ function Board({level}) {
                     )}
                 </div>
             </div>
+
            ):(
             <p>fuck</p>
            )}

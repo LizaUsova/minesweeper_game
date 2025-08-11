@@ -1,34 +1,23 @@
-import { useState } from 'react'
-import './App.css'
-import Board from "./components/Board.jsx";
+import { useState } from 'react';
+import './App.css';
+import {Route, Routes} from "react-router-dom";
+import StartGame from "./components/StartGame.jsx";
+import EasyLevel from "./components/Levels/EasyLevel.jsx";
+import MediumLevel from "./components/Levels/MediumLevel.jsx";
+import HardLevel from "./components/Levels/HardLevel.jsx";
+import CustomLevel from "./components/Levels/CustomLevel.jsx";
 
 function App() {
-  const [gameStarted, setGameStarted] = useState(false);
-  const [level, setLevel] = useState('');
 
-  return (
-    <div className="game">
-          <h1>Minesweeper</h1>
-            {!gameStarted ? (
-                <button
-                    onClick={() => setGameStarted(true)}>
-                    Start Game
-                </button>
-            ) : (
-                !level ? (
-                <div className="levels">
-                    <h2>Select level</h2>
-                    <button onClick={() => setLevel('easy')}>Easy</button>
-                    <button onClick={() => setLevel('medium')}>Medium</button>
-                    <button onClick={() => setLevel('hard')}>Hard</button>
-                    <button onClick={() => setLevel('custom')}>Custom</button>
-                </div>
-                ) : (
-                    <Board level={level} />
-                )
-            )}
-        </div>
-  )
+    return (
+        <Routes>
+            <Route path="/" element={<StartGame />} />
+            <Route path="/easy" element={<EasyLevel />} />
+            <Route path="/medium" element={<MediumLevel />} />
+            <Route path="/hard" element={<HardLevel />} />
+            <Route path="/custom" element={<CustomLevel />} />
+        </Routes>
+    );
 }
 
-export default App
+export default App;
