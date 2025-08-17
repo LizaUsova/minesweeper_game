@@ -54,7 +54,11 @@ function CustomLevel(props) {
                     </div>
                 </>
             ) : (
-                <Board customConfig={customConfig} level="custom" />
+                <Board customConfig={{
+                    height: customConfig.rows,
+                    width: customConfig.cols,
+                    mines: customConfig.bombs
+                }} level="custom" />
             )}
         </>
     );

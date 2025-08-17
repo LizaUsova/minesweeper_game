@@ -12,11 +12,11 @@ function Board({level, customConfig}) {
 
     let config;
     if (level === 'easy') {
-        config = {rows: 8, cols: 8, bombs: 10};
+        config = {height: 8, width: 8, mines: 10};
     } else if (level === 'medium') {
-        config = {rows: 12, cols: 12, bombs: 20};
+        config = {height: 12, width: 12, mines: 20};
     } else if (level === 'hard') {
-        config = {rows: 12, cols: 18, bombs: 25};
+        config = {height: 12, width: 18, mines: 25};
     } else if (level === 'custom') {
         config = customConfig;
     }
@@ -32,11 +32,7 @@ function Board({level, customConfig}) {
         //         headers: {
         //             "Content-Type": "application/json",
         //         },
-        //         body: JSON.stringify({
-        //             height: 10,
-        //             width: 10,
-        //             mines: 20
-        //         })
+        //         body: JSON.stringify(config)
         //     })
         //     const data = await res.json();
         //     setGameData(data)
@@ -74,6 +70,22 @@ function Board({level, customConfig}) {
     }, [bombs]);
 
     const handleCellClick = (index) => {
+        //  return e => {
+        //      const width = gameData.board[0].length
+        //      const y = Math.floor(index / width)
+        //      const x = index % width
+
+        //      async function dig() {
+        //          const res = await fetch(`http://localhost:8080/minesweeper/dig?x=${x}&y=${y}`, {
+        //              method: 'PUT'
+        //          })
+        //          const data = await res.json();
+        //          setGameData(data)
+        //          return data
+        //      }
+        //      dig()
+        //  }
+
         return e => {
             if (!isGameStarted) {
                 setIsGameStarted(true);

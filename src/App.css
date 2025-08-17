@@ -122,6 +122,24 @@ input {
   background-repeat: no-repeat;
 }
 
+.cell_mine {
+  background-image: url("./assets/icons/mine.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .cell_number {
+    font-weight: bold;
+}
+
+.cell_number_1 {
     color: blue;
+}
+
+.cell_number_2 {
+    color: green;
+}
+
+.cell_number_3 {
+    color: red;
 }

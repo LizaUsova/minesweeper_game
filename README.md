@@ -42,7 +42,7 @@ Where **board** is an array of strings. Each symbol in string represents game ce
  - F - marked cell as mine
  - M - unmarked mine, shows other mines in case of lose
  - X - mine that caused game lose
- - E - empty cell
+ - . - empty cell
 
 ### Making game request
 
