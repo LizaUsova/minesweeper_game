@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Board from "../Board.jsx";
+import Board from "./Board.jsx";
 
 function CustomLevel(props) {
     const [customConfig, setCustomConfig] = useState({rows: 0, cols: 0, bombs: 0});
@@ -11,9 +11,7 @@ function CustomLevel(props) {
         }));
     };
 
-
     return (
-
         <>
             {!startCustom ? (
                 <>

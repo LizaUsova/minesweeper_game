@@ -1,4 +1,4 @@
-function Cell({ onClick, status }) {
+function Cell({ onClick, onRightClick, status }) {
 
     let val = ""
     const classes = ["cell"]
@@ -14,7 +14,9 @@ function Cell({ onClick, status }) {
     return (
         <button
             className={classes.join(" ")}
-            onClick={onClick}>
+            onClick={onClick}
+            onContextMenu={onRightClick}
+        >
             {val}
         </button>
     );
