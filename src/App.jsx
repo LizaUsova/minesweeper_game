@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {Route, Routes} from "react-router-dom";
 import StartGame from "./components/StartGame.jsx";
 import CustomLevel from "./components/CustomLevel.jsx";

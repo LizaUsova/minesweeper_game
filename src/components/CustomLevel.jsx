@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Board from "./Board.jsx";
+import ButtonBack from "./ButtonBack.jsx";
 
 function CustomLevel(props) {
     const [customConfig, setCustomConfig] = useState({rows: 0, cols: 0, bombs: 0});
@@ -47,10 +48,11 @@ function CustomLevel(props) {
                             />
                         </label>
                     </div>
-                    <div className="btn-custom_run">
-                        <button onClick={() => setStartCustom(true)}>
+                    <div className="btn">
+                        <button className="btn_custom-run" onClick={() => setStartCustom(true)}>
                             Start
                         </button>
+                            <ButtonBack />
                     </div>
                 </>
             ) : (

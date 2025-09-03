@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Cell from "./Cell.jsx";
 import TopBord from "./TopBord.jsx";
+import {useNavigate} from "react-router-dom";
+import ButtonBack from "./ButtonBack.jsx";
 
 function Board({level, customConfig}) {
 
@@ -9,6 +11,7 @@ function Board({level, customConfig}) {
     const [isGameStarted, setIsGameStarted] = useState(false);
 
     const [gameData, setGameData] = useState(null);
+
 
     let config;
     if (level === 'easy') {
@@ -115,15 +118,15 @@ function Board({level, customConfig}) {
             {level === 'custom'}
             {gameData ?
                 (
-                    <div className="board_wrapper">
+                    <>
                         <TopBord bombs={mineCounter} timer={timer}/>
                         <div className="board-grid" style={{gridTemplateColumns: `repeat(${width}, 40px)`}}>
                             {boardFlatten.split("").map((_, index) =>
-                                <Cell key={index} onClick={handleCellClick(index)} status={_}/>
-                            )}
+                                    <Cell key={index} onClick={handleCellClick(index)} status={_}/>
+                                )}
                         </div>
-                    </div>
-
+                        <ButtonBack />
+                    </>
                 ) : (
                     <p>fuck</p>
                 )}
