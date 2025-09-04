@@ -5,14 +5,12 @@ import CustomLevel from "./components/CustomLevel.jsx";
 import LevelPage from "./components/LevelPage.jsx";
 
 function App() {
-
-    return (
-        <Routes>
-            <Route path="/" element={<StartGame />} />
-            <Route path="/level/:level" element={<LevelPage />} />
-            <Route path="/custom" element={<CustomLevel />} />
-        </Routes>
-    );
+        return (
+            <Routes>
+                <Route path="/" element={<StartGame/>}/>
+                <Route path="/level/:level" element={<LevelPage/>}/>
+                <Route path="/custom" element={<CustomLevel/>}/>
+            </Routes>
+        );
 }
-
 export default App;

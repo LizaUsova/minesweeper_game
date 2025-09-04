@@ -49,7 +49,7 @@ function CustomLevel(props) {
                         </label>
                     </div>
                     <div className="btn">
-                        <button className="btn_custom-run" onClick={() => setStartCustom(true)}>
+                        <button className="btn-custom_run" onClick={() => setStartCustom(true)}>
                             Start
                         </button>
                             <ButtonBack />
